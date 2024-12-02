@@ -24,6 +24,7 @@
 <%=h.getName() %>さんは<%=h.getAge() %>歳です。
 </p>
 <br><%System.out.println("スコープの中身："+(Human)session.getAttribute("human")); %>
+<hr>
 <a href="/example08/SessionServlet2">再リクエスト</a>
 </body>
 </html>
