@@ -7,7 +7,7 @@
 <title>スッキリ健康診断</title>
 </head>
 <body>
-<h1>スッキリ健康診断</h1>
+<h1>スッキリ健康診断a</h1>
 <form action="HealthCheck" method="post">
 身長：<input type="number" name="height" vale="175" placeholder="175">(cm)<br>
 体重：<input type="number" name="weight" vale="65" placeholder="65">(kg)<br>
