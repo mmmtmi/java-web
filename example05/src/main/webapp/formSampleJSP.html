@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>フォームの操作</title>
+</head>
+<body>
+	
+<!--<form action="					formSample.jsp" method="post">-->
+<!--					↑現在のページからの相対パス
+						注意！他のアプリケーションに所属せ日ているサーバーサイドプログラムを
+								呼び出す場合は府冨合の要因になる！
+							アプリケーション名を起点とする相対パス。-->
+	<form action="/example05/formSample.jsp" method="post">
+<!--						↑サーバー名以降を記述				↑
+						注意！Wed通信の仕組みを活用して
+						Wedアプリは開発されている。
+						そのため、リクエストラインの内容を参照して指定する必要がある。-->
+		<p>
+		<label>名前：<input type="text" name="name"></label></p><!--部品に必ず名前を付ける。-->
+		<p>性別：									<!--ラヂオはnameが同一。valueが送信される。-->
+		<label>男性<input type="radio" name="gender" value="男性"></label>
+		<label>女性<input type="radio" name="gender" value="女性"></label></p>
+		<p><input type="submit" value="送信"></p>
+				<!--nameは必須ではない。valueがボタン名に反映-->
+	</form>
+</body>
+</html>

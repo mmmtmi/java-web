@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>スッキリ健康診断</title>
-</head>
+ </head>
 <body>
 <h1>スッキリ健康診断a</h1>
 <form action="HealthCheck" method="post">
