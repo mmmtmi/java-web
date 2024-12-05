@@ -51,19 +51,28 @@ public class MinatoIndex extends HttpServlet {
 			siteEV = new SiteEV();
 		}
 		
-		/*	nullでなければ何もしない。*/
-		
+		/*	nullでなければ何もしない。
+		 * 
+		 * 	③リクエストパラメーターの取得*/
 		request.setCharacterEncoding("UTF-8");
 		String action = request.getParameter("action");
+		
+		//	④サイトの評価処理(モデルに作業依頼)
 		SiteEVLogic siteEVLogic = new SiteEVLogic();
+		
+		//	action != null (リンクからのリクエスト)　→　評価処理する！
 		if (action != null && action.equals("like")) {
 			siteEVLogic.like(siteEV);
 		}else if (action != null && action.equals("dislike")) {
 			siteEVLogic.dislike(siteEV);
 		}
+		// null だったら、何も評価しない。
 		
+		
+		// ⑤アプレケーションスコープにサイト評価を保存
 		application.setAttribute("siteEV", siteEV);
 		
+		//	⑥フォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher
 				("WEB-INF/jsp/minatoIndex.jsp");
 		dispatcher.forward(request, response);
