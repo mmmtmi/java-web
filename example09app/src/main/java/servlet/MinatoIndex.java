@@ -60,6 +60,10 @@ public class MinatoIndex extends HttpServlet {
 		//	④サイトの評価処理(モデルに作業依頼)
 		SiteEVLogic siteEVLogic = new SiteEVLogic();
 		
+		
+		synchronized (siteEV) {			//スレッドの競合対策(交通整理)[p.256]
+			
+		
 		//	action != null (リンクからのリクエスト)　→　評価処理する！
 		if (action != null && action.equals("like")) {
 			siteEVLogic.like(siteEV);
@@ -68,7 +72,7 @@ public class MinatoIndex extends HttpServlet {
 		}
 		// null だったら、何も評価しない。
 		
-		
+		}
 		// ⑤アプレケーションスコープにサイト評価を保存
 		application.setAttribute("siteEV", siteEV);
 		
