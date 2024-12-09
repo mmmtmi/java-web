@@ -17,6 +17,7 @@
 <head>
 <meta charset="UTF-8">
 <title>どこつぶ</title>
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
 <h1>どこつぶメイン</h1>
@@ -30,7 +31,7 @@
 	<input type="submit" value="つぶやく">
 </form>
 <%if (errorMsg != null){ %>
-<p><%= errorMsg %></p>
+<p id="redCor"><%= errorMsg %></p>
 <% } %>
 <% for (Mutter mutter : mutterList){ %>
 	<p><%= mutter.getUserName() %>:<%=mutter.getText() %>

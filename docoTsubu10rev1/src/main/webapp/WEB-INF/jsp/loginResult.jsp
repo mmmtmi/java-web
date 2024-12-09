@@ -11,6 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <title>どこぶつ</title>
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
 <h1>どこぶつログイン</h1>
@@ -19,7 +20,7 @@
 	<p>ようこそ<%= loginUser.getName() %>さん</p>
 	<a href="Main">つぶやき投稿・閲覧へ</a>
 <% }else{ %>
-	<p>ログインに失敗しました</p>
+	<p id="redCor">ログインに失敗しました</p>
 	<a href="index.jsp">TOPへ</a>
 <% } %>
 
