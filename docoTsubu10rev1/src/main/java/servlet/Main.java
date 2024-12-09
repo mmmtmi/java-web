@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -106,6 +107,7 @@ public class Main extends HttpServlet {
 		//①リクエストパラメーターの取得
 		request.setCharacterEncoding("UTF-8");
 		String text = request.getParameter("text");
+		Date date = new Date();
 		
 		//入力値チェック
 		//★有）つぶやき内容
@@ -120,7 +122,7 @@ public class Main extends HttpServlet {
 			
 			//つぶやくを作成してつぶやきリストに追加
 			//①-③つぶやき情報を登録（ユーザー名、つぶやき内容）
-			Mutter mutter = new Mutter(loginUser.getName(), text);
+			Mutter mutter = new Mutter(loginUser.getName(), text, date);
 			//①-④つぶやき情報をつぶやきリストに追加
 			//※最新の「つぶやき情報」が、つぶやきリストの先頭に来るように処理
 			PostMutterLogic postMutterLogic = new PostMutterLogic();

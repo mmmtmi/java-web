@@ -34,7 +34,13 @@
 <p id="redCor"><%= errorMsg %></p>
 <% } %>
 <% for (Mutter mutter : mutterList){ %>
-	<p><%= mutter.getUserName() %>:<%=mutter.getText() %>
+	<table>
+	<tr>
+	<th><%= mutter.getUserName() %></th>
+	<td><h2><%=mutter.getText() %></h2></td></tr>
+	<tr><td></td><td>post at :<%=mutter.getDate() %></td>
+	</tr>
+	</table>
 <%} %>
 </body>
 </html>
