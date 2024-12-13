@@ -2,6 +2,8 @@ package filter;
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -14,7 +16,9 @@ import javax.servlet.http.HttpFilter;
 /**
  * Servlet Filter implementation class SetEncodingFilter
  */
-@WebFilter(filterName = "jSetEncodingFilter", urlPatterns = { "/jSetEncodingFilter" })
+//@WebFilter(filterName = "jSetEncodingFilter", urlPatterns = { "/jSetEncodingFilter" })
+//@WebFilter("/Set")
+@WebFilter("/FormServlet")
 public class SetEncodingFilter extends HttpFilter implements Filter {
        
     /**
@@ -40,7 +44,12 @@ public class SetEncodingFilter extends HttpFilter implements Filter {
 		// place your code here
 
 		// pass the request along the filter chain
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		chain.doFilter(request, response);
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		out.println("<p>ご利用ありがとうございました。</p>");
 	}
 
 	/**

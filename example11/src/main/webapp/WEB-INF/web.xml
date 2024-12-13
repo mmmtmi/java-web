@@ -9,4 +9,13 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <filter>
+    <display-name>SetEncodingFilter</display-name>
+    <filter-name>SetEncodingFilter</filter-name>
+    <filter-class>filter.SetEncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SetEncodingFilter</filter-name>
+    <url-pattern>/SetEncodingFilter</url-pattern>
+  </filter-mapping>
 </web-app>
