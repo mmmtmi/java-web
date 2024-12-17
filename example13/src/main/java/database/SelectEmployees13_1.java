@@ -16,11 +16,13 @@ public class SelectEmployees13_1 {
 			throw new IllegalStateException(
 					"JDBCドライバを読み込めませんでした。");
 		}
-		
+		//データベースへ接続
 		try (Connection conn = DriverManager.getConnection(
 				"jdbc:h2:tcp://localhost/~/Documents/database/example","sa","")){
+			//SELECT文を準備
 			String sql = "select ID, NAME, AGE FROM EMPLOYEES";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+			//SELECTを実行し、結果を取得
 			ResultSet rs = pStmt.executeQuery();
 			
 			while(rs.next()) {
@@ -28,9 +30,9 @@ public class SelectEmployees13_1 {
 				String name = rs.getString("NAME");
 				int age = rs.getInt("AGE");
 				
-				System.out.println(id);
-				System.out.println(name);
-				System.out.println(age);
+				System.out.println("ID:" + id);
+				System.out.println("名前：" + name);
+				System.out.println("年齢：" + age + "\n");
 			}
 		}catch (SQLException e) {
 				e.printStackTrace();
